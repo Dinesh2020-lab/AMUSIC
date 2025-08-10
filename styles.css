@@ -109,6 +109,7 @@ body{
 .page-inner.back{
   transform: rotateY(180deg);
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.98));
+  border : 2px solid red;
 }
 
 /* cover style */
@@ -167,4 +168,5 @@ body{
 @media (max-width:760px){
   body{padding:12px}
   .book{transform:scale(0.78);transform-origin:center top}
+
 }
