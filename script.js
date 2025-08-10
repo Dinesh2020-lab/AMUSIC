@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateIndicator(){
     // Show logical page: flipped+1 (cover is page 0 visually). Keep simple mapping
     const logical = Math.min(Math.max(flipped + 1, 1), totalPages);
-    pageIndicator.textContent = Page ${logical} / ${totalPages};
+    pageIndicator.textContent = `Page ${logical} / ${totalPages}`;
   }
 
   function flipNext(){
@@ -62,4 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initialize indicator
   updateIndicator();
+
 });
