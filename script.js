@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initialize indicator
   updateIndicator();
-  pages[1].classList.add('flipped');
-  pages[4].classList.add('flipped');
-  updateIndicator();
+  
+  
+  
 
 });
+
 
