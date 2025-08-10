@@ -1,6 +1,7 @@
 // Simple page-turn logic: clicking Next flips the next page from top to bottom.
 // Pages are in DOM order. We flip pages progressively.
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM loaded,script running');
   const book = document.getElementById('book');
   const pages = Array.from(book.querySelectorAll('.page'));
   const prevBtn = document.getElementById('prevBtn');
@@ -67,5 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 });
+
 
 
