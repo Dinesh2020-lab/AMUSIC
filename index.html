@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dinesh Bishoyi — Diary Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1 class="title">Dinesh Bishoyi — Diary Portfolio</h1>
+      <div class="controls">
+        <button id="prevBtn" class="btn">◀ Prev</button>
+        <span id="pageIndicator" class="page-indicator">Page 1 / 10</span>
+        <button id="nextBtn" class="btn">Next ▶</button>
+      </div>
+    </header>
+
+    <section class="book-wrapper">
+      <div class="book" id="book">
+        <!-- Cover -->
+        <article class="page cover-page">
+          <div class="page-inner">
+            <h2 class="cover-main">Dinesh</h2>
+            <h3 class="cover-sub">Bishoyi</h3>
+            <p class="cover-small">Colourful Diary Portfolio</p>
+            <div class="sticky sticky-large">Hello! 👋</div>
+          </div>
+        </article>
+
+        <!-- About -->
+        <article class="page" data-page="1">
+          <div class="page-inner front">
+            <h3>About Me</h3>
+            <p>I’m <strong>Dinesh Bishoyi</strong>, a passionate web creator who blends colour, animation, and interactivity to craft unique experiences. I love turning ideas into vibrant digital spaces that inspire and engage. Every page I design feels like a story waiting to be explored.</p>
+            <div class="note">Motto: “Code with creativity, design with purpose.”</div>
+          </div>
+          <div class="page-inner back">
+            <h4>Hobbies</h4>
+            <ul>
+              <li>Playing chess</li>
+              <li>Playing cricket</li>
+              <li>Spending quiet time with myself</li>
+            </ul>
+            <div class="doodle">♪ ♫</div>
+          </div>
+        </article>
+
+        <!-- Education -->
+        <article class="page" data-page="2">
+          <div class="page-inner front">
+            <h3>Education</h3>
+            <ul class="edu-list">
+              <li><strong>Matriculation</strong> — JMJ English Medium High School, Kanchili</li>
+              <li><strong>Intermediate</strong> — SASI Educational Institutes, Visakhapatnam</li>
+              <li><strong>B.Tech</strong> — NIT Agartala (Ongoing)</li>
+            </ul>
+          </div>
+          <div class="page-inner back">
+            <h4>Academic Courses</h4>
+            <ul>
+              <li>DSA (Data Structures & Algorithms)</li>
+              <li>OOP (Object-Oriented Programming)</li>
+              <li>DBMS</li>
+              <li>Cryptography</li>
+              <li>Operating Systems</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Experience (elaborated) -->
+        <article class="page" data-page="3">
+          <div class="page-inner front">
+            <h3>Experience</h3>
+            <p><strong>Web Development Intern — Coding Samurai</strong></p>
+            <p><em>June 9, 2025 – July 9, 2025</em></p>
+            <ul>
+              <li>Worked on frontend features using HTML, CSS and JavaScript to build responsive components.</li>
+              <li>Implemented interactive UI elements and small animations to improve user engagement.</li>
+              <li>Collaborated with a small team—participated in daily standups and code reviews, and contributed to documentation and bug fixing.</li>
+            </ul>
+            <div class="mini-note">Key: Hands-on with real-world web workflows and team collaboration.</div>
+          </div>
+          <div class="page-inner back">
+            <h4>Ongoing Growth</h4>
+            <p>Continuing to level up in full-stack techniques, improving algorithmic thinking, and experimenting with richer UI micro-interactions.</p>
+          </div>
+        </article>
+
+        <!-- Projects -->
+        <article class="page" data-page="4">
+          <div class="page-inner front">
+            <h3>Projects</h3>
+            <div class="project">
+              <h4>Music Player Web App</h4>
+              <p>A sleek, colourful online music player with playlist support, smooth animations, and responsive design. Features: play/pause, seek, playlists, and joyful micro-interactions.</p>
+            </div>
+            <div class="project ongoing">
+              <h4>Ongoing Project</h4>
+              <p>Exploring experimental UI patterns and integrating animations with accessible controls — a playground for new ideas.</p>
+            </div>
+          </div>
+          <div class="page-inner back">
+            <h4>Tech Stack</h4>
+            <p>HTML · CSS · JavaScript · C++ · Python</p>
+          </div>
+        </article>
+
+        <!-- Skills -->
+        <article class="page" data-page="5">
+          <div class="page-inner front">
+            <h3>Technical Skills</h3>
+            <ul class="skills">
+              <li>C++</li>
+              <li>Python</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="page-inner back">
+            <h4>Communication</h4>
+            <p>English · Hindi · Telugu · Oriya</p>
+            <h4>Academic Strengths</h4>
+            <p>DSA, OOP, DBMS, Cryptography, OS</p>
+          </div>
+        </article>
+
+        <!-- Achievements -->
+        <article class="page" data-page="6">
+          <div class="page-inner front">
+            <h3>Achievements</h3>
+            <ul>
+              <li>Participated in <strong>Sansad Youth Indian Parliament</strong> at IIT Kharagpur.</li>
+              <li>Earned <strong>Certificate from Amazon</strong> — Solution Architecture Job Simulation.</li>
+            </ul>
+          </div>
+          <div class="page-inner back">
+            <h4>Goals</h4>
+            <ul>
+              <li>Become a skilled Full Stack Developer blending creativity and functionality.</li>
+              <li>Contribute to open-source and mentor beginners.</li>
+              <li>Build helpful products that simplify everyday tasks.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Contact -->
+        <article class="page" data-page="7">
+          <div class="page-inner front">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:bishoyidinesh998@gmail.com">bishoyidinesh998@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/dinesh-bishoyi-32677a31a" target="_blank" rel="noopener">Dinesh Bishoyi</a></p>
+          </div>
+          <div class="page-inner back">
+            <h4>Reach Out</h4>
+            <p>I’m open to internships, collaborations and interesting projects. Let’s build colourful things!</p>
+          </div>
+        </article>
+
+        <!-- Diary Notes / Extras -->
+        <article class="page" data-page="8">
+          <div class="page-inner front">
+            <h3>Daily Notes</h3>
+            <p class="handwritten">Sketch UI ideas first. Prototype motion. Test on a real device.</p>
+            <div class="sticky">Idea: interactive postcard</div>
+          </div>
+          <div class="page-inner back">
+            <h4>Playground</h4>
+            <p>Experiment area for micro-interactions, animations, and small tools — music player demos, color mixers and more.</p>
+          </div>
+        </article>
+
+        <!-- Back Cover -->
+        <article class="page back-cover">
+          <div class="page-inner">
+            <h2>Thanks for flipping through!</h2>
+            <p>— Dinesh</p>
+            <div class="decor-links">
+              <a href="#">GitHub</a> · <a href="#">Dribbble</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <small>Diary Portfolio — built by Dinesh Bishoyi</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

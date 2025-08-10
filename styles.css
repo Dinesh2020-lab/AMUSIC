@@ -1,0 +1,170 @@
+:root{
+  --bg:#f6f3ef;
+  --paper:#fffef8;
+  --accent1:#ff6b6b;
+  --accent2:#ffd93d;
+  --accent3:#6bc1ff;
+  --text:#222;
+  --muted:#6b6b6b;
+  --book-width:900px;
+  --book-height:520px;
+  --page-thickness:2px;
+}
+
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f0f8ff 0%,var(--bg) 60%);
+  color:var(--text);
+  padding:28px;
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+}
+
+/* App layout */
+.app{max-width:1200px;width:100%}
+.app-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.title{font-size:20px;letter-spacing:1px}
+.controls{display:flex;gap:12px;align-items:center}
+.btn{
+  background:linear-gradient(180deg,white,var(--paper));
+  border:1px solid rgba(0,0,0,0.08);
+  padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+}
+.page-indicator{font-size:13px;color:var(--muted)}
+
+/* Book container */
+.book-wrapper{display:flex;justify-content:center}
+.book{
+  width:var(--book-width);
+  height:var(--book-height);
+  position:relative;
+  perspective:2200px;
+  transform-style:preserve-3d;
+  margin:0 auto;
+  box-shadow:0 25px 60px rgba(11,22,40,0.15);
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent3),transparent 40%);
+  padding:22px;
+  overflow:visible;
+}
+
+/* Page base */
+.page{
+  --w:420px;
+  --h:440px;
+  width:var(--w);
+  height:var(--h);
+  position:absolute;
+  left:60px;
+  top:40px;
+  transform-origin:left center;
+  transition: transform 700ms cubic-bezier(.2,.9,.25,1), z-index 0ms linear 350ms;
+  transform-style:preserve-3d;
+  box-shadow: 0 12px 30px rgba(13,20,30,0.08);
+  border-radius:8px;
+  background:var(--paper);
+  overflow:hidden;
+  border: var(--page-thickness) solid rgba(0,0,0,0.03);
+}
+
+/* stacking pages so first page is on top visually */
+.page:nth-of-type(1){z-index:100}
+.page:nth-of-type(2){z-index:90;left:56px}
+.page:nth-of-type(3){z-index:80;left:52px}
+.page:nth-of-type(4){z-index:70;left:48px}
+.page:nth-of-type(5){z-index:60;left:44px}
+.page:nth-of-type(6){z-index:50;left:40px}
+.page:nth-of-type(7){z-index:40;left:36px}
+.page:nth-of-type(8){z-index:30;left:32px}
+.page:nth-of-type(9){z-index:20;left:28px}
+.page.back-cover{z-index:10;left:24px}
+
+/* flipped state rotates page and reveals back */
+.page.flipped{
+  transform: rotateY(-180deg);
+  z-index:0 !important;
+  transition: transform 700ms cubic-bezier(.2,.9,.25,1), z-index 0ms linear 0ms;
+}
+
+/* Page inner faces */
+.page-inner{
+  position:absolute;
+  inset:0;
+  padding:26px;
+  backface-visibility:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* front face */
+.page-inner.front{transform:rotateY(0deg)}
+
+/* back face (visible after flip) */
+.page-inner.back{
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.98));
+}
+
+/* cover style */
+.cover-page{
+  width:480px;
+  left:20px;
+  background: linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.cover-main{font-size:48px;letter-spacing:6px;margin-bottom:6px}
+.cover-sub{font-size:20px;margin-bottom:4px;opacity:0.95}
+.cover-small{font-weight:600;opacity:0.9}
+
+.sticky{
+  position:absolute;
+  right:18px;top:18px;
+  width:86px;height:86px;
+  background:var(--accent2);
+  color:#222;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  transform:rotate(9deg);
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+  font-weight:700;
+}
+
+/* content headings */
+.page-inner h3{font-size:20px;color:var(--accent1)}
+.page-inner h4{font-size:16px;color:var(--accent3);margin-top:6px}
+.page-inner p{color:var(--text);line-height:1.45}
+.page-inner ul{list-style:disc;margin-left:18px;color:var(--muted)}
+.project{background:linear-gradient(90deg, rgba(107,193,255,0.12), rgba(255,107,107,0.06));padding:10px;border-radius:8px}
+.project.ongoing{border:2px dashed rgba(0,0,0,0.05)}
+
+/* skills chips */
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skills li{list-style:none;padding:6px 8px;border-radius:999px;background:linear-gradient(180deg,#fff,#fffef8);box-shadow:0 4px 8px rgba(0,0,0,0.04);font-weight:600}
+
+/* handwritten note */
+.handwritten{font-family: 'Segoe Script', 'Brush Script MT', cursive;color:#4a4a4a}
+.note{background:var(--accent3);color:#022;padding:8px;border-radius:8px;font-weight:600;display:inline-block}
+
+/* mini decorations */
+.doodle{font-size:22px;opacity:0.6}
+.mini-note{background:var(--accent2);display:inline-block;padding:6px;border-radius:6px;font-weight:600}
+
+/* responsive */
+@media (max-width:1100px){
+  :root{--book-width:760px}
+  .book{padding:12px}
+  .page{--w:360px;--h:420px}
+}
+@media (max-width:760px){
+  body{padding:12px}
+  .book{transform:scale(0.78);transform-origin:center top}
+}
